@@ -42,9 +42,9 @@ describe('useGifs', () => {
 
     expect(result.current.gifs.length).toBe(10);
 
-    // vi.spyOn(gifActions, 'getGifsByQuery').mockRejectedValue(
-    //   new Error('This is my custom error')
-    // );
+    vi.spyOn(gifActions, 'getGifsByQuery').mockRejectedValue(
+      new Error('This is my custom error')
+    );
 
     await act(async () => {
       await result.current.handleTermClicked('goku');
